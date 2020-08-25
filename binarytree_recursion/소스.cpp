@@ -17,36 +17,36 @@ struct Node
 };
 
 //LRV
-void printPostorder(struct Node* node)
+void postorder(struct Node* node)
 {
     if (node == NULL)
         return;
 
-    printPostorder(node->left);
-    printPostorder(node->right);
+    postorder(node->left);
+    postorder(node->right);
     cout << node->data << " ";
 }
 
 //LVR
-void printInorder(struct Node* node)
+void inorder(struct Node* node)
 {
     if (node == NULL)
         return;
 
-    printInorder(node->left);
+    inorder(node->left);
     cout << node->data << " ";
-    printInorder(node->right);
+    inorder(node->right);
 }
 
 //VLR
-void printPreorder(struct Node* node)
+void preorder(struct Node* node)
 {
     if (node == NULL)
         return;
 
     cout << node->data << " ";
-    printPreorder(node->left);
-    printPreorder(node->right);
+    preorder(node->left);
+    preorder(node->right);
 }
 
 int main()
@@ -65,13 +65,13 @@ int main()
     root->left->right = new Node(5);
 
     cout << "\nPreorder traversal of binary tree is \n";
-    printPreorder(root);
+    preorder(root);
 
     cout << "\nInorder traversal of binary tree is \n";
-    printInorder(root);
+    inorder(root);
 
     cout << "\nPostorder traversal of binary tree is \n";
-    printPostorder(root);
+    postorder(root);
 
     return 0;
 }
