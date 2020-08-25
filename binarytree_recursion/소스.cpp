@@ -16,6 +16,7 @@ struct Node
     }
 };
 
+//LRV
 void printPostorder(struct Node* node)
 {
     if (node == NULL)
@@ -26,6 +27,7 @@ void printPostorder(struct Node* node)
     cout << node->data << " ";
 }
 
+//LVR
 void printInorder(struct Node* node)
 {
     if (node == NULL)
@@ -36,6 +38,7 @@ void printInorder(struct Node* node)
     printInorder(node->right);
 }
 
+//VLR
 void printPreorder(struct Node* node)
 {
     if (node == NULL)
