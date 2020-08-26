@@ -75,16 +75,12 @@ void postorder(struct Node* root)
     
     while (!s1.empty())
     {
-        //right는 s1 삭제 후 s2에 넘겨준다
         curr = s1.top();
         s1.pop();
         s2.push(curr);
 
-        //여기선 left의 끝자락을 향해 s1에 스택을 쌓는다
         if (curr->left) s1.push(curr->left);
         if (curr->right) s1.push(curr->right);
-
-        //right가 없는 시점부터 s2 삭제 후 s2에 스택을 쌓는다
     }
 
     while (!s2.empty())
